@@ -24,7 +24,8 @@ class CartPage extends Component {
                     onClick={this.props.removeProductFromCart.bind(
                       this,
                       cartItem.id
-                    )}>
+                    )}
+                  >
                     Remove from Cart
                   </button>
                 </div>
