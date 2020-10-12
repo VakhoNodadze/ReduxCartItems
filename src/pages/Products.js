@@ -7,19 +7,20 @@ import './Products.css';
 
 class ProductsPage extends Component {
   render() {
+    const { products, cartItemCount, addProductToCart } = this.props;
     return (
       <React.Fragment>
-        <MainNavigation cartItemNumber={this.props.cartItemCount} />
+        <MainNavigation cartItemNumber={cartItemCount} />
         <main className="products">
           <ul>
-            {this.props.products.map(product => (
+            {products.map(product => (
               <li key={product.id}>
                 <div>
                   <strong>{product.title}</strong> - ${product.price}
                 </div>
                 <div>
                   <button
-                    onClick={this.props.addProductToCart.bind(this, product)}
+                    onClick={addProductToCart.bind(this, product)}
                   >
                     Add to Cart
                   </button>

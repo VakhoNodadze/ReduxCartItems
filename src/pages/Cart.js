@@ -7,13 +7,14 @@ import './Cart.css';
 
 class CartPage extends Component {
   render() {
+    const { cartItemCount, cartItems, removeProductFromCart } = this.props
     return (
       <React.Fragment>
-        <MainNavigation cartItemNumber={this.props.cartItemCount} />
+        <MainNavigation cartItemNumber={cartItemCount} />
         <main className="cart">
-          {this.props.cartItems.length <= 0 && <p>No Item in the Cart!</p>}
+          {cartItems.length <= 0 && <p>No Item in the Cart!</p>}
           <ul>
-            {this.props.cartItems.map(cartItem => (
+            {cartItems.map(cartItem => (
               <li key={cartItem.id}>
                 <div>
                   <strong>{cartItem.title}</strong> - ${cartItem.price} (
@@ -21,7 +22,7 @@ class CartPage extends Component {
                 </div>
                 <div>
                   <button
-                    onClick={this.props.removeProductFromCart.bind(
+                    onClick={removeProductFromCart.bind(
                       this,
                       cartItem.id
                     )}

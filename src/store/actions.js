@@ -8,7 +8,7 @@ export const addProductToCart = product => {
         type: ADD_PRODUCT_TO_CART,
         payload: product
       });
-    }, 700);
+    }, 300);
   };
 };
 
@@ -19,6 +19,6 @@ export const removeProductFromCart = productId => {
           type: REMOVE_PRODUCT_FROM_CART,
           payload: productId
         });
-      }, 700);
+      }, 300);
     };
   };
